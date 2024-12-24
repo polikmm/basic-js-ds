@@ -73,13 +73,19 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return getMin(this.base);
+    function getMin(root) {
+      if (root.left === null) return root.data;
+      return getMin(root.left);
+    }
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    return getMax(this.base);
+    function getMax(root) {
+      if (root.right === null) return root.data;
+      return getMax(root.right);
+    }
   }
 }
 
