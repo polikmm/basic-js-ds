@@ -53,9 +53,18 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  find(data) {
+    return search(this.base, data);
+    function search(root, node) {
+      if (root === null) return null;
+      if (root.data === node) return root;
+
+      if (node < root.data) {
+        return search(root.left, node);
+      } else {
+        return search(root.right, node);
+      }
+    }
   }
 
   remove(/* data */) {
